@@ -19,12 +19,19 @@ These clients can be used with testing frameworks in various languages to publis
 * [Jasmine (grunt-contrib-jasmine) Client](https://github.com/lotaris/rox-client-grunt-contrib-jasmine)
 * [PHPUnit Client](https://github.com/lotaris/rox-client-phpunit)
 * [XCTest Client](https://github.com/lotaris/rox-client-xctest)
+* [JUnit Client](https://github.com/lotaris/rox-client-junit)
+* [Java EE ITF Client](https://github.com/lotaris/rox-client-jee-itf)
+
+Clients for other testing frameworks are under development:
+
+* [Bwoken client](https://github.com/lotaris/rox-client-bwoken)
 
 The following libraries can be used to develop new clients:
 
 * [Node.js Client Library](https://github.com/lotaris/rox-client-node)
 * [Grunt Client Library](https://github.com/lotaris/rox-client-grunt)
 * [Ruby Client Library](https://github.com/lotaris/rox-client-ruby)
+* [Java Client Library](https://github.com/lotaris/rox-client-java)
 
 <a name="setup-procedure"></a>
 ## Setup Procedure
