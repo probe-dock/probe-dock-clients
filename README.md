@@ -44,7 +44,7 @@ project:
 server: probe-dock.example.com
 ```
 
-Read on to learn about other configuration properties.
+Read on to learn about other [configuration properties](#configuration-files).
 
 <a name="configuration-files"></a>
 ## Configuration Files
