@@ -1,7 +1,6 @@
-# ROX Center Clients
-<a name="readme"></a>
+# Probe Dock Clients
 
-> Documentation and integration guide for [ROX Center](https://github.com/lotaris/rox-center) clients.
+**Documentation and integration guide for [Probe Dock](https://github.com/probe-dock/probe-dock) clients.**
 
 * [List of Clients](#clients)
 * [Setup Procedure](#setup-procedure)
@@ -11,68 +10,50 @@
 <a name="clients"></a>
 ## List of Clients
 
-These clients can be used with testing frameworks in various languages to publish test results to a ROX Center server:
+Clients exist for the following test frameworks:
 
-* [RSpec Client](https://github.com/lotaris/rox-client-rspec)
-* [Karma Client](https://github.com/lotaris/rox-client-karma)
-* [Jasmine (Grunt) Client](https://github.com/lotaris/rox-client-grunt-jasmine)
-* [Jasmine (grunt-contrib-jasmine) Client](https://github.com/lotaris/rox-client-grunt-contrib-jasmine)
-* [PHPUnit Client](https://github.com/lotaris/rox-client-phpunit)
-* [XCTest Client](https://github.com/lotaris/rox-client-xctest)
-* [JUnit Client](https://github.com/lotaris/rox-client-junit)
-* [Java EE ITF Client](https://github.com/lotaris/rox-client-jee-itf)
-
-Clients for other testing frameworks are under development:
-
-* [Bwoken client](https://github.com/lotaris/rox-client-bwoken)
-
-The following libraries can be used to develop new clients:
-
-* [Node.js Client Library](https://github.com/lotaris/rox-client-node)
-* [Grunt Client Library](https://github.com/lotaris/rox-client-grunt)
-* [Ruby Client Library](https://github.com/lotaris/rox-client-ruby)
-* [Java Client Library](https://github.com/lotaris/rox-client-java)
+* [RSpec Client](https://github.com/probe-dock/probe-dock-rspec)
 
 <a name="setup-procedure"></a>
 ## Setup Procedure
 
-This procedure documents the minimal recommended setup for a standard ROX Center client.
+This procedure documents the minimal setup for a standard Probe Dock client.
 
-Create the `~/.rox/config.yml` configuration file (in your **home directory**).
-This file lists the ROX Center servers you can publish results to, along with your credentials for these servers.
+Create the `~/.probe-dock/config.yml` configuration file (in your **home directory**).
+This file lists the Probe Dock servers you can publish results to, along with your API credentials for these servers.
 This information is personal and should not be committed into your project repository, hence why it should be in the home configuration file.
-
 
 ```yml
 servers:
-  rox.example.com:   # ROX Center server identifier (e.g. domain name)
-    apiUrl: https://rox.example.com/api   # ROX Center API root URL
-    apiKeyId: 39fuc7x85lsoy9c0ek2d        # Your API credentials (key & secret) on that ROX Center server
-    apiKeySecret: mwpqvvmagzoegxnqptxdaxkxonjmvrlctwcrfmowibqcpnsdqd
+  probe-dock.example.com:                 # Probe Dock server identifier (e.g. domain name)
+    apiUrl: https://probe-dock.example.com/api   # Probe Dock server API URL
+    apiToken: mwpqvvmagzoegxnqas45nfnptxdaxkxo   # A personal API access token which you can generate from your profile page in Probe Dock
 
 publish: true
 ```
 
-In the **project directory** where you run your tests, create the `rox.yml` client configuration file.
-This file is used to identify your project and select the default ROX Center server you want to publish to.
-You should commit this file into your project repository.
+In the **project directory** where you run your tests, create the `probe-dock.yml` client configuration file.
+This file is used to identify your project and select the default Probe Dock server you want to publish to.
+You should commit this file into the project repository.
 
 ```yml
 project:
   apiId: 154sic93pxs0
   version: 1.2.3
 
-server: rox.example.com
+server: probe-dock.example.com
 ```
+
+Read on to learn about other configuration properties.
 
 <a name="configuration-files"></a>
 ## Configuration Files
 
-ROX clients use [YAML](http://yaml.org) files for configuration.
+Most Probe Dock clients use [YAML](http://yaml.org) files for configuration.
 The following files will be loaded if they exist:
 
-* the home configuration file: `~/.rox/config.yml`;
-* the project configuration file: `/path/to/your/project/rox.yml`.
+* the home configuration file: `~/.probe-dock/config.yml`;
+* the project configuration file: `/path/to/your/project/probe-dock.yml`.
 
 Settings in the project configuration file always override those in the home configuration file.
 
@@ -86,71 +67,73 @@ and project-related settings in the project file.
 Here is an annotated example of a full configuration file.
 
 ```yml
-# List of ROX Center servers you can submit test results to.
+# List of Probe Dock servers you can submit test results to.
 servers:
-  rox.example.com:                        # A custom name identifying your ROX Center server.
+  probe-dock.example.com:                 # A custom name identifying the Probe Dock server.
                                           # You can use this name to select which server to publish
                                           # to when there are multiple servers.
-                                          # We recommend using the domain name where you deployed it.
+                                          # We recommend using the domain name where it is running.
 
-    apiUrl: https://rox.example.com/api   # The URL of your ROX Center server's API.
-    apiKeyId: 39fuc7x85lsoy9c0ek2d        # Your user credentials on that server.
-    apiKeySecret: mwpqvvmagzoegxnqptxdaxkxonjmvrlctwcrfmowibqcpnsdqd
+    apiUrl: https://probe-dock.example.com/api   # The URL of the Probe Dock server's API.
+    apiToken: mwpqvvma2rdagzoegxnqptxdaxkxonjm   # A personal API access token which you can generate from your profile page in Probe Dock.
 
-# If "publish" is true, test results will be uploaded to ROX Center.
+# If "publish" is true, test results will be published to Probe Dock.
 # Set it to false to temporarily disable publishing.
-# You can change this at runtime from the command line by setting the
-# ROX_PUBLISH environment variable to 0 (false) or 1 (true).
+# You can override this at runtime from the command line by setting the
+# PROBE_DOCK_PUBLISH environment variable to 0 (false) or 1 (true).
 publish: true
 
 # Project-related configuration.
 project:
-  apiId: 154sic93pxs0   # The API key of your project in the ROX Center server.
-  version: 1.2.3
+  apiId: 154sic93pxs0   # The API key of your project in Probe Dock.
+  version: 1.2.3        # The current version of your project.
 
 # Where the client should store its temporary files.
 # The client will work without it but it is required for some features.
-workspace: tmp/rox
+workspace: tmp/probe-dock
 
 # Test payload options.
 payload:
-  
-  # Save a copy of the last test payload sent to the ROX Center server for debugging.
-  # The file will be saved in <CLIENT>/servers/<SERVER_NAME>/payload.json, where CLIENT
-  # is the name of the ROX client, e.g. rspec or phpunit, and SERVER_NAME is the name
-  # of the ROX Center server the results were last sent to.
-  # Temporarily enable at runtime by setting the ROX_SAVE_PAYLOAD environment variable to 1.
+
+  # Save a copy of the last test payload sent to Probe Dock for debugging.
+  # The file will be saved in <TMP_DIR>/<CLIENT>/servers/<SERVER_NAME>/payload.json,
+  # where TMP_DIR is the optional "workspace" property, CLIENT is the name of the
+  # Probe Dock client, e.g. rspec or phpunit, and SERVER_NAME is the name of the
+  # Probe Dock server the results were last sent to.
+  # You can temporarily enable this at runtime by setting the PROBE_DOCK_SAVE_PAYLOAD environment variable to 1.
+  # This feature requires the "workspace" property to be set.
   save: false
 
   # If you track a large number of tests (more than a thousand), enabling this feature
-  # will reduce the size of the JSON test payloads sent to ROX Center server by caching
+  # will reduce the size of the JSON test payloads sent to Probe Dock by caching
   # test information that doesn't change often (such as the name).
-  # Temporarily enable at runtime by setting the ROX_CACHE_PAYLOAD environment variable to 1.
+  # You can temporarily enable this at runtime by setting the PROBE_DOCK_CACHE_PAYLOAD environment variable to 1.
+  # This feature requires the "workspace" property to be set.
   cache: false
 
-  # Print a copy of the test payload sent to the ROX Center server for debugging.
-  # Temporarily enable at runtime by setting the ROX_PRINT_PAYLOAD environment variable to 1.
+  # When publishing test results to Probe Dock, Print a copy of the test payload in the console for debugging.
+  # You can temporarily enable this at runtime by setting the PROBE_DOCK_PRINT_PAYLOAD environment variable to 1.
   print: false
 
-# Use "server" to select which ROX Center server to publish test results to.
+# Use "server" to select which Probe Dock server to publish test results to.
 # It should be one of the server names you defined in the configuration.
-# Temporarily switch to another server at runtime by giving another name in the ROX_SERVER environment variable.
-server: rox.example.com
+# You can temporarily switch to another server at runtime by giving another name in the PROBE_DOCK_SERVER environment variable.
+server: probe-dock.example.com
 ```
 
 <a name="environment-variables"></a>
 ## Environment Variables
 
-The following environment variables can be used to control the behavior of a ROX Center client at runtime.
-They always override the corresponding setting in the configuration files.
+The following environment variables can be used to control the behavior of Probe Dock client at runtime.
+They always take precedence over the corresponding setting in the configuration files.
 
-* `ROX_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to the ROX Center server.
-* `ROX_SERVER` - server name - Select which ROX Center server to publish test results to (this must be one of the servers defined in the configuration files).
-* `ROX_TEST_RUN_UID` - custom identifier - Group test results sent separately under the same test run in the ROX Center server by setting the same test run UID when you run your tests.
-* `ROX_WORKSPACE` - local path
-* `ROX_SAVE_PAYLOAD` - `0|1`
-* `ROX_CACHE_PAYLOAD` - `0|1`
-* `ROX_PRINT_PAYLOAD` - `0|1`
+* `PROBE_DOCK_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to Probe Dock.
+* `PROBE_DOCK_SERVER` - server name - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
+* `PROBE_DOCK_TEST_REPORT_UID` - custom identifier - Group test results sent separately under the same test report in Probe Dock by setting the same test report UID when you run your tests.
+* `PROBE_DOCK_WORKSPACE` - local path
+* `PROBE_DOCK_SAVE_PAYLOAD` - `0|1`
+* `PROBE_DOCK_CACHE_PAYLOAD` - `0|1`
+* `PROBE_DOCK_PRINT_PAYLOAD` - `0|1`
 
 ## Contributing
 
@@ -163,5 +146,5 @@ Please add a changelog entry with your name for new features and bug fixes.
 
 ## License
 
-**rox-client** is licensed under the [MIT License](http://opensource.org/licenses/MIT).
+This guide and its examples are licensed under the [MIT License](http://opensource.org/licenses/MIT).
 See [LICENSE.txt](LICENSE.txt) for the full text.
