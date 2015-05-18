@@ -3,6 +3,7 @@
 **Documentation and integration guide for [Probe Dock](https://github.com/probe-dock/probe-dock) clients.**
 
 * [List of Clients](#clients)
+* [List of Libraries](#libraries)
 * [Setup Procedure](#setup-procedure)
 * [Configuration Files](#configuration-files)
 * [Environment Variables](#environment-variables)
@@ -13,6 +14,14 @@
 Clients exist for the following test frameworks:
 
 * [RSpec Client](https://github.com/probe-dock/probe-dock-rspec)
+* [Junit Client](https://github.com/probe-dock/probe-dock-junit)
+
+<a name="libraries"></a>
+## List of Libraries
+
+Libraries exist for the following test languages:
+
+* [Java](https://github.com/probe-dock/probe-dock-java)
 
 <a name="setup-procedure"></a>
 ## Setup Procedure
