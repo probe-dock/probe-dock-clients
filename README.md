@@ -21,8 +21,8 @@ Clients exist for the following test frameworks:
 
 The following libraries can be used to develop new clients:
 
-* [Java](https://github.com/probe-dock/probedock-java)
-* [Ruby](https://github.com/probe-dock/probedock-ruby)
+* [Java](https://github.com/probedock/probedock-java)
+* [Ruby](https://github.com/probedock/probedock-ruby)
 
 <a name="setup-procedure"></a>
 ## Setup Procedure
