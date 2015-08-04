@@ -15,7 +15,7 @@ Clients exist for the following test frameworks:
 
 * [RSpec Client](https://github.com/probedock/probedock-rspec)
 * [Junit Client](https://github.com/probedock/probedock-junit)
-* [Java ITF Client](https://github.com/probedock/probedock-itf)
+* [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 
 <a name="libraries"></a>
 ## List of Libraries
