@@ -7,6 +7,9 @@
 * [Setup Procedure](#setup-procedure)
 * [Configuration Files](#configuration-files)
 * [Environment Variables](#environment-variables)
+* [Probe Dock RT](#pdrt)
+    * [Setup Procedure](#pdrt-setup-procedure)
+    * [Configuration Files](#pdrt-configuration-files)
 
 <a name="clients"></a>
 ## List of Clients
@@ -14,16 +17,16 @@
 Clients exist for the following test frameworks:
 
 * [RSpec Client](https://github.com/probedock/probedock-rspec)
-* [Junit Client](https://github.com/probedock/probedock-junit)
-* [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
+* [Junit Client](https://github.com/probedock/probedock-junit) ([rt](https://github.com/probedock/probedock-rt-junit))
+* [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf), [rt](https://github.com/probedock/probedock-rt-itf))
 
 <a name="libraries"></a>
 ## List of Libraries
 
 The following libraries can be used to develop new clients:
 
-* [Java](https://github.com/probedock/probedock-java)
 * [Ruby](https://github.com/probedock/probedock-ruby)
+* [Java](https://github.com/probedock/probedock-java) ([rt](https://github.com/probedock/probedock-rt-java))
 
 <a name="setup-procedure"></a>
 ## Setup Procedure
@@ -137,6 +140,62 @@ They always take precedence over the corresponding setting in the configuration 
 * `PROBE_DOCK_WORKSPACE` - local path
 * `PROBE_DOCK_SAVE_PAYLOAD` - `0|1`
 * `PROBE_DOCK_PRINT_PAYLOAD` - `0|1`
+
+<a name="pdrt"></a>
+## Probe Dock RT
+
+**Documentation and integration guide for [Probe Dock RT](https://github.com/probedock/probedock-rt) clients.**
+
+* [Setup Procedure](#pdrt-setup-procedure)
+* [Configuration Files](#pdrt-configuration-files)
+
+<a name="pdrt-setup-procedure"></a>
+### Setup Procedure
+
+This procedure documents the minimal setup for a standard Probe Dock RT client.
+
+Create the `~/.probedock/probedock-rt.yml` configuration file (in your **home directory**).
+
+```yml
+host: 127.0.0.1
+port: 1337
+openBrowser: true
+enabled: true
+```
+
+Read on to learn about other [configuration properties](#configuration-files).
+
+<a name="pdrt-configuration-files"></a>
+### Configuration Files
+
+Most Probe Dock RT clients use [YAML](http://yaml.org) files for configuration.
+The following files will be loaded if they exist:
+
+* the home configuration file: `~/.probedock/probedock-rt.yml`;
+* the project configuration file: `/path/to/your/project/probedock.yml`. This file is not mandatory.
+
+**Remark**: When the project configuration file is missing, there is no possibility to get the  `project API ID` or the
+project version. Therefore, the value `Any` will be used for both. The result of using this value will make all the test
+result notifications gathered by Probe Dock RT will be grouped under a common anonymous project.
+
+### Full Configuration File
+
+Here is an annotated example of a full configuration file.
+
+```yml
+# Host and port are used by the clients to send the test result notifications. It is also used 
+# to open the browser at the right address when starting Probe Dock RT
+host: 127.0.0.1
+port: 1337
+
+# By default, when Probe Dock RT is started, the default browser is open to the starting page. This can
+# be deactivated by setting this option to false.
+openBrowser: true
+
+# By default, running the tests with Probe Dock RT clients configured will send the test result notifications.
+# It is possible to deactivate this behavior by setting this option to false.
+enabled: true
+```
 
 ## Contributing
 
