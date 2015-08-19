@@ -15,6 +15,7 @@
 
 Clients exist for the following test frameworks:
 
+* [Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine)
 * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 * [JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
 * [Karma Client](https://github.com/probedock/probedock-karma)
@@ -27,6 +28,7 @@ Clients exist for the following test frameworks:
 
 The following libraries can be used to develop new clients:
 
+* [Grunt.js](https://github.com/probedock/probedock-grunt)
 * [Java](https://github.com/probedock/probedock-java)
 * [Node.js](https://github.com/probedock/probedock-node)
 * [Ruby](https://github.com/probedock/probedock-ruby)
