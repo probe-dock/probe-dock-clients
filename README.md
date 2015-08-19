@@ -8,22 +8,31 @@
 * [Configuration Files](#configuration-files)
 * [Environment Variables](#environment-variables)
 
+
+
 <a name="clients"></a>
 ## List of Clients
 
 Clients exist for the following test frameworks:
 
-* [RSpec Client](https://github.com/probedock/probedock-rspec)
 * [Junit Client](https://github.com/probedock/probedock-junit)
+* [Karma Client](https://github.com/probedock/probedock-karma)
+* [RSpec Client](https://github.com/probedock/probedock-rspec)
+
+
 
 <a name="libraries"></a>
 ## List of Libraries
 
 The following libraries can be used to develop new clients:
 
-* [Java](https://github.com/probe-dock/probe-dock-java)
-* [Ruby](https://github.com/probe-dock/probe-dock-ruby)
+* [Java](https://github.com/probe-dock/probedock-java)
+* [Node.js](https://github.com/probedock/probedock-node)
+* [Ruby](https://github.com/probe-dock/probedock-ruby)
 
+
+
+<a name="setup"></a>
 <a name="setup-procedure"></a>
 ## Setup Procedure
 
@@ -35,8 +44,8 @@ This information is personal and should not be committed into your project repos
 
 ```yml
 servers:
-  probedock.example.com:                 # Probe Dock server identifier (e.g. domain name)
-    apiUrl: https://probedock.example.com/api   # Probe Dock server API URL
+  probedock.example.com:                         # Probe Dock server identifier (e.g. domain name)
+    apiUrl: https://probedock.example.com/api    # Probe Dock server API URL
     apiToken: mwpqvvmagzoegxnqas45nfnptxdaxkxo   # A personal API access token which you can generate from your profile page in Probe Dock
 
 publish: true
@@ -51,10 +60,12 @@ project:
   apiId: 154sic93pxs0
   version: 1.2.3
 
-server: probedock.example.com
+server: probedock.example.com   # The identifier of one of the Probe Dock servers defined in the home configuration file
 ```
 
 Read on to learn about other [configuration properties](#configuration-files).
+
+
 
 <a name="configuration-files"></a>
 ## Configuration Files
@@ -71,6 +82,8 @@ Both files can contain all of the configuration properties.
 However, since part of the configuration consists of personal credentials,
 it is recommended to put these private settings in the home file,
 and project-related settings in the project file.
+
+
 
 ### Full Configuration File
 
@@ -124,18 +137,22 @@ payload:
 server: probedock.example.com
 ```
 
+
+
 <a name="environment-variables"></a>
 ## Environment Variables
 
 The following environment variables can be used to control the behavior of Probe Dock client at runtime.
 They always take precedence over the corresponding setting in the configuration files.
 
-* `PROBE_DOCK_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to Probe Dock.
-* `PROBE_DOCK_SERVER` - server name - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
-* `PROBE_DOCK_TEST_REPORT_UID` - custom identifier - Group test results sent separately under the same test report in Probe Dock by setting the same test report UID when you run your tests.
-* `PROBE_DOCK_WORKSPACE` - local path
-* `PROBE_DOCK_SAVE_PAYLOAD` - `0|1`
-* `PROBE_DOCK_PRINT_PAYLOAD` - `0|1`
+* `PROBEDOCK_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to Probe Dock.
+* `PROBEDOCK_SERVER` - server name - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
+* `PROBEDOCK_TEST_REPORT_UID` - custom identifier - Group test results sent separately under the same test report in Probe Dock by setting the same test report UID when you run your tests.
+* `PROBEDOCK_WORKSPACE` - local path
+* `PROBEDOCK_SAVE_PAYLOAD` - `0|1`
+* `PROBEDOCK_PRINT_PAYLOAD` - `0|1`
+
+
 
 ## Contributing
 
@@ -145,6 +162,8 @@ They always take precedence over the corresponding setting in the configuration 
 * Create a [pull request](http://help.github.com/pull-requests/) from your branch
 
 Please add a changelog entry with your name for new features and bug fixes.
+
+
 
 ## License
 
