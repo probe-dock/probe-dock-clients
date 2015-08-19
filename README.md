@@ -15,6 +15,7 @@
 
 Clients exist for the following test frameworks:
 
+* [Cucumber (Ruby)](https://github.com/probedock/probedock-cucumber-ruby)
 * [Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
 * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 * [JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
