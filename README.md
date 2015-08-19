@@ -15,10 +15,10 @@
 
 Clients exist for the following test frameworks:
 
-* [Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine)
+* [Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
 * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 * [JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
-* [Karma Client](https://github.com/probedock/probedock-karma)
+* [Karma Client](https://github.com/probedock/probedock-karma) ([demo](https://github.com/probedock/probedock-demo-karma))
 * [RSpec Client](https://github.com/probedock/probedock-rspec) ([demo](https://github.com/probedock/probedock-demo-rspec))
 
 
