@@ -145,15 +145,27 @@ server: probedock.example.com
 <a name="environment-variables"></a>
 ## Environment Variables
 
-The following environment variables can be used to control the behavior of Probe Dock client at runtime.
+The following environment variables can be used to control the behavior of Probe Dock probes at runtime.
 They always take precedence over the corresponding setting in the configuration files.
 
+### General configuration
+
 * `PROBEDOCK_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to Probe Dock.
-* `PROBEDOCK_SERVER` - server name - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
-* `PROBEDOCK_TEST_REPORT_UID` - custom identifier - Group test results sent separately under the same test report in Probe Dock by setting the same test report UID when you run your tests.
-* `PROBEDOCK_WORKSPACE` - local path
+* `PROBEDOCK_SERVER` - *server name* - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
+* `PROBEDOCK_WORKSPACE` - *local path*
 * `PROBEDOCK_SAVE_PAYLOAD` - `0|1`
 * `PROBEDOCK_PRINT_PAYLOAD` - `0|1`
+
+### Test run report configuration
+
+* `PROBEDOCK_TEST_REPORT_UID` - *string (max 100 characters)* - Group test results sent separately under the same test report in Probe Dock by setting the same test report UID when you run your tests.
+
+### Server configuration
+
+These variables can be used in a continuous integration environment to avoid storing the API URL and credentials in a file:
+
+* `PROBEDOCK_SERVER_API_URL` - *URL* - URL of the Probe Dock server API to publish the test results to
+* `PROBEDOCK_SERVER_API_TOKEN` - *string* - Bearer token to use to authenticate to the Probe Dock server API
 
 
 
