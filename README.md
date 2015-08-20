@@ -74,11 +74,18 @@ Read on to learn about other [configuration properties](#configuration-files).
 <a name="configuration-files"></a>
 ## Configuration Files
 
-Most Probe Dock clients use [YAML](http://yaml.org) files for configuration.
-The following files will be loaded if they exist:
+Most Probe Dock probes use [YAML](http://yaml.org) files for configuration.
 
-* the home configuration file: `~/.probedock/config.yml`;
-* the project configuration file: `/path/to/your/project/probedock.yml`.
+Probes will attempt to load two files if they exist:
+
+* the home configuration file;
+* the project configuration file.
+
+The home configuration file is expected to be in the home directory of the user running the probes at `~/.probedock/config.yml`.
+
+The project configuration file is usually expected to be in the root directory of the project being tested: `/path/to/your/project/probedock.yml`.
+However, that's not always the case depending on the language or framework.
+**Always check the documentation of each probe to know where the project configuration file should be located.**
 
 Settings in the project configuration file always override those in the home configuration file.
 
@@ -86,6 +93,12 @@ Both files can contain all of the configuration properties.
 However, since part of the configuration consists of personal credentials,
 it is recommended to put these private settings in the home file,
 and project-related settings in the project file.
+
+You may use only one file if that fits your needs better,
+for example on a continuous integration server. Also check out the
+[$PROBEDOCK\_CONFIG](#environment-variables) environment variable
+which can be used to override the path from which the project configuration
+file is loaded.
 
 
 
@@ -151,6 +164,7 @@ They always take precedence over the corresponding setting in the configuration 
 
 ### General configuration
 
+* `PROBEDOCK_CONFIG` - *local path* - Path to the project configuration file (overrides the default path `./probedock.yml`).
 * `PROBEDOCK_PUBLISH` - `0|1` - Disable (0) or enable (1) publishing of test results to Probe Dock.
 * `PROBEDOCK_SERVER` - *server name* - Select which Probe Dock server to publish test results to (this must be one of the servers defined in the configuration files).
 * `PROBEDOCK_WORKSPACE` - *local path*
