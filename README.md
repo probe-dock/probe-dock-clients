@@ -64,6 +64,7 @@ You should commit this file into the project repository.
 project:
   apiId: 154sic93pxs0
   version: 1.2.3
+  baseTestPath: /path/to/test/directory # Relative base path to the source files of the tests
 
 server: probedock.example.com   # The identifier of one of the Probe Dock servers defined in the home configuration file
 ```
@@ -183,7 +184,18 @@ These variables can be used in a continuous integration environment to avoid sto
 * `PROBEDOCK_SERVER_API_URL` - *URL* - URL of the Probe Dock server API to publish the test results to
 * `PROBEDOCK_SERVER_API_TOKEN` - *string* - Bearer token to use to authenticate to the Probe Dock server API
 
+### SCM data
 
+* `PROBEDOCK_SCM_NAME` - Name of the SCM tool (ex: git)
+* `PROBEDOCK_SCM_VERSION` - Version of the SCM tool
+* `PROBEDOCK_SCM_COMMIT` - Commit of the tests execution
+* `PROBEDOCK_SCM_BRANCH` - Branch of the commit
+* `PROBEDOCK_SCM_DIRTY` - true|false - Dirty means there are files that are not commited
+* `PROBEDOCK_SCM_REMOTE_NAME` - Name of the remote
+* `PROBEDOCK_SCM_REMOTE_URL_FETCH` - Fetch URL of the remote
+* `PROBEDOCK_SCM_REMOTE_URL_PUSH` - Push URL of the remote
+* `PROBEDOCK_SCM_REMOTE_AHEAD` - <number> - Number of commits ahead of remote
+* `PROBEDOCK_SCM_REMOTE_BEHIND` - <number> - Number of commits behind of remote
 
 ## Contributing
 
