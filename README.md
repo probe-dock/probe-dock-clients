@@ -155,6 +155,17 @@ payload:
 # It should be one of the server names you defined in the configuration.
 # You can temporarily switch to another server at runtime by giving another name in the PROBE_DOCK_SERVER environment variable.
 server: probedock.example.com
+
+# Specific to Java clients (based on our Java library)
+java:
+	# Configure a specific category based on Java package to override the 
+	# category present in the probe or in the configuration.
+	# Use `minimatch` patterns like (`*|**`) to identify the packages.
+  categoriesByPackage:
+    io.probedock.integration**: Integration
+    io.probedock.api: API
+    io.probedock.e2e.*: End to end
+    # ...
 ```
 
 
