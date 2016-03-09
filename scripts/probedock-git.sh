@@ -32,7 +32,9 @@ if [[ -n "$merge" ]] && [[ -n "$PROBEDOCK_SCM_REMOTE_NAME" ]]; then
 fi
 
 # Retrieve the original configuration file given in argument
-cat $1
+if [ -n "$1" ]; then
+	cat $1
+fi
 
 # Produce the additional configuration to stdout
 echo
