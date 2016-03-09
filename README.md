@@ -111,7 +111,7 @@ Here is an annotated example of a full configuration file.
 ```yml
 # List of Probe Dock servers you can submit test results to.
 servers:
-  probedock.example.com:                 # A custom name identifying the Probe Dock server.
+  probedock.example.com:                  # A custom name identifying the Probe Dock server.
                                           # You can use this name to select which server to publish
                                           # to when there are multiple servers.
                                           # We recommend using the domain name where it is running.
@@ -127,8 +127,9 @@ publish: true
 
 # Project-related configuration.
 project:
-  apiId: 154sic93pxs0   # The API key of your project in Probe Dock.
-  version: 1.2.3        # The current version of your project.
+  apiId: 154sic93pxs0                   # The API key of your project in Probe Dock.
+  version: 1.2.3                        # The current version of your project.
+  baseTestPath: /path/to/test/directory # Relative base path to the source files of the tests
 
 # Where the client should store its temporary files.
 # The client will work without it but it is required for some features.
@@ -172,6 +173,10 @@ They always take precedence over the corresponding setting in the configuration 
 * `PROBEDOCK_WORKSPACE` - *local path*
 * `PROBEDOCK_SAVE_PAYLOAD` - `0|1`
 * `PROBEDOCK_PRINT_PAYLOAD` - `0|1`
+
+### Project configuration
+
+* `PROBEDOCK_BASE_TEST_PATH` - <path> - The path where are the test sources to build complete test source paths.
 
 ### Test run report configuration
 
