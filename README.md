@@ -158,9 +158,9 @@ server: probedock.example.com
 
 # Specific to Java clients (based on our Java library)
 java:
-	# Configure a specific category based on Java package to override the 
-	# category present in the probe or in the configuration.
-	# Use `minimatch` patterns like (`*|**`) to identify the packages.
+  # Configure a specific category based on Java package to override the 
+  # category present in the probe or in the configuration.
+  # Use `minimatch` patterns like (*|**) to identify the packages.
   categoriesByPackage:
     io.probedock.integration**: Integration
     io.probedock.api: API
