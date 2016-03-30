@@ -5,7 +5,8 @@ PROBEDOCK_SCM_VERSION=$(`git --version` | cut -d " " -f 3)
 # Gathering data related to the current state of Git repo
 PROBEDOCK_SCM_BRANCH=`git rev-parse --abbrev-ref HEAD`
 PROBEDOCK_SCM_COMMIT=`git rev-parse --verify HEAD`
-PROBEDOCK_SCM_DIRTY=`if [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]]; then echo true; else echo false; fi`
+STAT_RESULT=`git status --porcelain`
+PROBEDOCK_SCM_DIRTY=`if [[ $STAT_RESULT != "" ]]; then echo true; else echo false; fi`
 
 PROBEDOCK_SCM_REMOTE_AHEAD=0
 PROBEDOCK_SCM_REMOTE_BEHIND=0
