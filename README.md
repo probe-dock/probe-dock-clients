@@ -17,7 +17,8 @@ Clients exist for the following test frameworks:
 
 **Note:** Arquillian can use JUnit to write the tests and then the JUnit probe can be reused to collect the results.
 * [Ruby Cucumber](https://github.com/probedock/probedock-cucumber-ruby)
-* [Java Arquillian](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian)) * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
+* [Java Arquillian](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian)) 
+* [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 * [Java JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
 * [Javascript Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
 * [JavaScript Karma Client](https://github.com/probedock/probedock-karma) ([demo](https://github.com/probedock/probedock-demo-karma))
