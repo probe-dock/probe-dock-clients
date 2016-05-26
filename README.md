@@ -15,13 +15,16 @@
 
 Clients exist for the following test frameworks:
 
-* [Arquillian (Java)](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian)) **Note:** Arquillian can use JUnit to write the tests and then the JUnit probe can be reused to collect the results.
-* [Cucumber (Ruby)](https://github.com/probedock/probedock-cucumber-ruby)
-* [Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
-* [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
-* [JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
-* [Karma Client](https://github.com/probedock/probedock-karma) ([demo](https://github.com/probedock/probedock-demo-karma))
-* [RSpec Client](https://github.com/probedock/probedock-rspec) ([demo](https://github.com/probedock/probedock-demo-rspec))
+**Note:** Arquillian can use JUnit to write the tests and then the JUnit probe can be reused to collect the results.
+* [Ruby Cucumber](https://github.com/probedock/probedock-cucumber-ruby)
+protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
+* [Java Arquillian](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian)) * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
+* [Java JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
+* [Javascript Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with * [JavaScript Karma Client](https://github.com/probedock/probedock-karma) ([demo](https://github.com/probedock/probedock-demo-karma))
+* [Ruby RSpec Client](https://github.com/probedock/probedock-rspec) ([demo](https://github.com/probedock/probedock-demo-rspec))
+* [Python nose2 Client](https://github.com/probedock/probedock-nose2) 
+* [Python pytest Client](https://github.com/probedock/probedock-pytest)
+* [Python unittest Client](https://github.com/probedock/probedock-py-unittest)
 
 
 
@@ -33,6 +36,7 @@ The following libraries can be used to develop new clients:
 * [Grunt.js](https://github.com/probedock/probedock-grunt)
 * [Java](https://github.com/probedock/probedock-java)
 * [Node.js](https://github.com/probedock/probedock-node)
+* [Python](https://github.com/probedock/probedock-python)
 * [Ruby](https://github.com/probedock/probedock-ruby)
 
 
