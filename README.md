@@ -15,17 +15,19 @@
 
 Clients exist for the following test frameworks:
 
-**Note:** Arquillian can use JUnit to write the tests and then the JUnit probe can be reused to collect the results.
-* [Ruby Cucumber](https://github.com/probedock/probedock-cucumber-ruby)
-* [Java Arquillian](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian)) 
+* [Java Arquillian](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-arquillian))
+
+    **Note:** Arquillian can use JUnit to write the tests and then the JUnit probe can be reused to collect the results.
 * [Java ITF Client](https://github.com/probedock/probedock-itf) ([demo](https://github.com/probedock/probedock-demo-itf))
 * [Java JUnit Client](https://github.com/probedock/probedock-junit) ([demo](https://github.com/probedock/probedock-demo-junit))
-* [Javascript Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
+* [JavaScript Jasmine (with Grunt.js)](https://github.com/probedock/probedock-grunt-jasmine) ([demo with protractor](https://github.com/probedock/probedock-demo-grunt-jasmine-protractor))
 * [JavaScript Karma Client](https://github.com/probedock/probedock-karma) ([demo](https://github.com/probedock/probedock-demo-karma))
-* [Ruby RSpec Client](https://github.com/probedock/probedock-rspec) ([demo](https://github.com/probedock/probedock-demo-rspec))
-* [Python nose2 Client](https://github.com/probedock/probedock-nose2) 
+* [PHPUnit Client](https://github.com/probedock/probedock-phpunit)
+* [Python nose2 Client](https://github.com/probedock/probedock-nose2)
 * [Python pytest Client](https://github.com/probedock/probedock-pytest)
 * [Python unittest Client](https://github.com/probedock/probedock-py-unittest)
+* [Ruby Cucumber](https://github.com/probedock/probedock-cucumber-ruby)
+* [Ruby RSpec Client](https://github.com/probedock/probedock-rspec) ([demo](https://github.com/probedock/probedock-demo-rspec))
 
 
 
